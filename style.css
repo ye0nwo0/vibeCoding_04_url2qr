@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f0f2f5;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    padding: 20px 28px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+header img {
+    height: 44px;
+    object-fit: contain;
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* QR 섹션 */
+.qr-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+    margin-bottom: 60px;
+}
+
+.qr-section.visible {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: all;
+}
+
+#qrcode {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#qrcode:hover {
+    transform: scale(1.03);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+.qr-hint {
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 0.3px;
+}
+
+/* 입력 섹션 */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 22vh;
+}
+
+.input-section.moved {
+    position: fixed;
+    bottom: 48px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-label {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: -0.3px;
+}
+
+.input-label.hidden {
+    display: none;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+input[type="text"] {
+    width: 380px;
+    padding: 13px 22px;
+    border: 2px solid #e0e0e0;
+    border-radius: 50px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    color: #333;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #4f8ef7;
+    box-shadow: 0 0 0 4px rgba(79, 142, 247, 0.12);
+}
+
+button {
+    padding: 13px 28px;
+    background: #4f8ef7;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.1s ease;
+    white-space: nowrap;
+}
+
+button:hover {
+    background: #3a7ae0;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+.page-subtitle {
+    position: fixed;
+    top: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: #aaa;
+    letter-spacing: 0.2px;
+    white-space: nowrap;
+}
+
+.footer-credit {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 13px;
+    color: #bbb;
+    letter-spacing: 1px;
+}

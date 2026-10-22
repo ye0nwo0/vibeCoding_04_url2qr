@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR 코드 생성기</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <img src="img/logo.png" alt="로고">
+    </header>
+
+    <p class="page-subtitle">URL을 QR로 변환해주는 페이지</p>
+
+    <main>
+        <div class="qr-section" id="qrSection">
+            <div id="qrcode" title="클릭하여 JPG 다운로드"></div>
+            <p class="qr-hint">이미지를 클릭하면 JPG로 저장됩니다</p>
+        </div>
+
+        <div class="input-section" id="inputSection">
+            <p class="input-label" id="inputLabel">URL을 입력하세요</p>
+            <div class="input-row">
+                <input type="text" id="urlInput" placeholder="https://example.com">
+                <button onclick="generateQR()">생성하기</button>
+            </div>
+        </div>
+    </main>
+
+    <p class="footer-credit">From.yeon</p>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
